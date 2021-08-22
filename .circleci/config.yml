@@ -11,7 +11,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - node/install
-      - node/install-npm
+      - node/install-packages
 workflows:
   install:
     jobs:
