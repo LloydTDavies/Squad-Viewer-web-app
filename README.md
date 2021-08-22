@@ -1,3 +1,4 @@
+[![Board Status](https://sporting-it.visualstudio.com/56c0a2c6-ca0f-4e20-9026-dc8b392dd2dc/0656f56d-4719-49ef-a198-532026ac14ae/_apis/work/boardbadge/aec66e6a-adc4-4d21-bff8-46fe32d18598)](https://sporting-it.visualstudio.com/56c0a2c6-ca0f-4e20-9026-dc8b392dd2dc/_boards/board/t/0656f56d-4719-49ef-a198-532026ac14ae/Microsoft.RequirementCategory)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
