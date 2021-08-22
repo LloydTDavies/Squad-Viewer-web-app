@@ -10,6 +10,7 @@ jobs:
       # replace with your preferred image
       - image: cimg/base:stable
     steps:
+      - node/install
       - node/install-npm
 workflows:
   install:
