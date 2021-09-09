@@ -12,9 +12,9 @@ const PlayerSearch: React.FC<PlayerSearchProps> = ({ onAddPlayer }) => {
     updateSearchResults,
   ] = useState(new Array<Player>());
 
-  const onClickHandler = () => {
-    getPlayerByName(searchString)
-      .then((data) => updateSearchResults([...data]));
+  const onClickHandler = async () => {
+    const searchResult = await getPlayerByName(searchString);
+    updateSearchResults([...searchResult]);
   };
 
   const addPlayerHandler = (player: Player) => {
@@ -43,7 +43,7 @@ const PlayerSearch: React.FC<PlayerSearchProps> = ({ onAddPlayer }) => {
               {' '}
               {player.team}
               {' '}
-              {player.nationality}
+              {player.nationality.name}
             </ListItem>
           ))}
         </List>

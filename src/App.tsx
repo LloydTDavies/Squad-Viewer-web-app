@@ -5,10 +5,6 @@ import { Player } from './Interfaces/Player.interface';
 import PlayerSearch from './Components/PlayerSearch/PlayerSearch';
 
 const DEFAULT_STATE: Player[] = [
-  { name: 'Cristian Ronaldo' },
-  { name: 'Lionel Messi' },
-  { name: 'Mo Salah' },
-  { name: 'Tony Kroos' },
 ];
 
 function App(): JSX.Element {

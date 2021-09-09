@@ -1,5 +1,10 @@
 export interface Player {
     name: string;
     team?: string;
-    nationality?: string
+    nationality: Nationality
+}
+
+export interface Nationality {
+    name: string,
+    icon: string
 }
