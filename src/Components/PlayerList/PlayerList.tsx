@@ -9,7 +9,7 @@ const PlayerList: React.FC<PlayerListProps> = (props) => {
   return (
     <Card className={Styles['player-list-card']}>
       <ul>
-        {players.map((player) => <li>{player.name}</li>)}
+        {players.map((player) => <li key={Math.random()}>{player.name}</li>)}
       </ul>
     </Card>
   );
