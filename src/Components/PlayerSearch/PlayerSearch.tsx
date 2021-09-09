@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Player } from '../../Interfaces/Player.interface';
 import { getPlayerByName } from '../../Services/Player/PlayerSearch.service';
+import Card from '../UI/Card';
 import Input from '../UI/Input';
 import List from '../UI/List';
 import ListItem from '../UI/ListItem';
@@ -24,7 +25,7 @@ const PlayerSearch: React.FC<PlayerSearchProps> = ({ onAddPlayer }) => {
   };
 
   return (
-    <div>
+    <Card>
       <Input
         type="text"
         value={searchString}
@@ -32,23 +33,31 @@ const PlayerSearch: React.FC<PlayerSearchProps> = ({ onAddPlayer }) => {
         placeholder="search"
       />
       <button type="button" onClick={onClickHandler}>Search</button>
-      <div>
+      <div style={{ maxHeight: 300, overflowY: 'scroll' }}>
         <List>
           {playerSearchResults.map((player) => (
             <ListItem
               key={Math.random()}
               onClick={() => addPlayerHandler(player)}
             >
-              {player.name}
-              {' '}
-              {player.team}
-              {' '}
-              {player.nationality.name}
+              <div>
+                <div>
+                  {player.name}
+                  {' '}
+                  <img
+                    src={player.nationality.icon}
+                    alt={player.nationality.name}
+                  />
+                </div>
+                <div>
+                  {player.team}
+                </div>
+              </div>
             </ListItem>
           ))}
         </List>
       </div>
-    </div>
+    </Card>
   );
 };
 

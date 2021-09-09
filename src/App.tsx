@@ -21,7 +21,7 @@ function App(): JSX.Element {
       </header>
       <main>
         <PlayerSearch onAddPlayer={onAddPlayerHandler} />
-        <PlayerList players={players} />
+        <PlayerList listName="Shortlist" players={players} />
       </main>
     </div>
   );
