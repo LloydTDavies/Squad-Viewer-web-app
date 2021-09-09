@@ -1,0 +1,12 @@
+.list-item {
+    padding: 20px;
+    cursor:default;
+  }
+  
+  .list-item:last-child {
+      margin-bottom: 5px;
+  }
+  
+  .list-item:hover {
+      background-color: rgb(243 243 243);
+  }
