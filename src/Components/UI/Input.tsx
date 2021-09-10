@@ -21,7 +21,7 @@ export interface InputProps {
   className?: string;
   type?: string;
   value?: string | number | readonly string[] | undefined;
-  onChange?: (event: any) => void;
+  onChange?: (e: React.FormEvent<HTMLInputElement>) => void;
   placeholder?: string
 }
 

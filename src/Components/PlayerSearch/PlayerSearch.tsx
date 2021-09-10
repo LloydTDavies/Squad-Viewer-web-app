@@ -32,7 +32,7 @@ const PlayerSearch: React.FC<PlayerSearchProps> = ({ onAddPlayer }) => {
       <Input
         type="text"
         value={searchString}
-        onChange={(event) => updateSearchString(event.target.value)}
+        onChange={(event) => updateSearchString(event.currentTarget.value)}
         placeholder="search"
       />
       <Button

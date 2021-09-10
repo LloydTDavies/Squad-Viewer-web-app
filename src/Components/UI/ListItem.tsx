@@ -13,7 +13,7 @@ const ListItem:React.FC<ListItemProps> = ({ children, onClick }) => (
 );
 
 export interface ListItemProps {
-  onClick?: (event: any) => void;
+  onClick?: () => void;
 }
 
 export default ListItem;
