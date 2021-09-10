@@ -1,5 +1,9 @@
 .player-list-card {
   max-width: 400px;
   max-height: 400px;
+}
+
+.player-list {
+  max-height: 300px;
   overflow-y: scroll;
 }

@@ -27,7 +27,7 @@ const PlayerList: React.FC<PlayerListProps> = (props) => {
     <Card className={Styles['player-list-card']}>
       <h3>{header}</h3>
       <br />
-      <List>
+      <List className={Styles['player-list']}>
         {content}
       </List>
     </Card>
