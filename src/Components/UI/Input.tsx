@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './Input.module.css';
 
 const Input: React.FC<InputProps> = ({
-  className, type, value, onChange, placeholder,
+  className = '', type, value, onChange, placeholder,
 }) => {
   const classes = `${styles.input} ${className}`;
   return (
@@ -20,7 +20,7 @@ const Input: React.FC<InputProps> = ({
 export interface InputProps {
   className?: string;
   type?: string;
-  value?: any;
+  value?: string | number | readonly string[] | undefined;
   onChange?: (event: any) => void;
   placeholder?: string
 }

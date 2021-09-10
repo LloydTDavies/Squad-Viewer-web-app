@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Player } from '../../Interfaces/Player.interface';
 import { getPlayerByName } from '../../Services/Player/PlayerSearch.service';
+import PlayerItem from '../Shared/PlayerItem';
+import Button from '../UI/Button';
 import Card from '../UI/Card';
 import Input from '../UI/Input';
 import List from '../UI/List';
@@ -14,6 +16,7 @@ const PlayerSearch: React.FC<PlayerSearchProps> = ({ onAddPlayer }) => {
   ] = useState(new Array<Player>());
 
   const onClickHandler = async () => {
+    if (searchString.length === 0) return;
     const searchResult = await getPlayerByName(searchString);
     updateSearchResults([...searchResult]);
   };
@@ -32,7 +35,7 @@ const PlayerSearch: React.FC<PlayerSearchProps> = ({ onAddPlayer }) => {
         onChange={(event) => updateSearchString(event.target.value)}
         placeholder="search"
       />
-      <button type="button" onClick={onClickHandler}>Search</button>
+      <Button type="button" onClick={onClickHandler}>Search</Button>
       <div style={{ maxHeight: 300, overflowY: 'scroll' }}>
         <List>
           {playerSearchResults.map((player) => (
@@ -40,19 +43,7 @@ const PlayerSearch: React.FC<PlayerSearchProps> = ({ onAddPlayer }) => {
               key={Math.random()}
               onClick={() => addPlayerHandler(player)}
             >
-              <div>
-                <div>
-                  {player.name}
-                  {' '}
-                  <img
-                    src={player.nationality.icon}
-                    alt={player.nationality.name}
-                  />
-                </div>
-                <div>
-                  {player.team}
-                </div>
-              </div>
+              <PlayerItem player={player} />
             </ListItem>
           ))}
         </List>
