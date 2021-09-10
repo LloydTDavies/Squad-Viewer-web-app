@@ -35,7 +35,13 @@ const PlayerSearch: React.FC<PlayerSearchProps> = ({ onAddPlayer }) => {
         onChange={(event) => updateSearchString(event.target.value)}
         placeholder="search"
       />
-      <Button type="button" onClick={onClickHandler}>Search</Button>
+      <Button
+        type="button"
+        onClick={onClickHandler}
+        disabled={searchString.length < 1}
+      >
+        Search
+      </Button>
       <div style={{ maxHeight: 300, overflowY: 'scroll' }}>
         <List>
           {playerSearchResults.map((player) => (
