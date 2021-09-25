@@ -9,6 +9,14 @@
   color: white;
 }
 
+.App-header span {
+  display: flex;
+}
+
+.App-header img {
+  height: 40px;
+}
+
 main {
   padding: 25px;;
 }

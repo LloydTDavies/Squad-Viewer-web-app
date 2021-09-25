@@ -21,6 +21,14 @@ const PlayerSearch: React.FC<PlayerSearchProps> = ({ onAddPlayer }) => {
     updateSearchResults([...searchResult]);
   };
 
+  const onKeyDownHandler = async (event: any) => {
+    if (event.key === 'enter') {
+      if (searchString.length === 0) return;
+      const searchResult = await getPlayerByName(searchString);
+      updateSearchResults([...searchResult]);
+    }
+  };
+
   const addPlayerHandler = (player: Player) => {
     onAddPlayer(player);
     updateSearchString('');
@@ -34,6 +42,7 @@ const PlayerSearch: React.FC<PlayerSearchProps> = ({ onAddPlayer }) => {
         value={searchString}
         onChange={(event) => updateSearchString(event.currentTarget.value)}
         placeholder="search"
+        onKeyDown={onKeyDownHandler}
       />
       <Button
         type="button"
